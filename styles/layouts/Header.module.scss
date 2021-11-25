@@ -1,0 +1,17 @@
+@import "../vars.scss";
+
+.main_header{
+	background-color: $color_main;
+	padding: 20px;
+	&_nav{
+		background-color: red;
+		&__list{
+			margin: 20px;
+			&__item{
+				a{
+					color: white;
+				}
+			}
+		}
+	}
+}
