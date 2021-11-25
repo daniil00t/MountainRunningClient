@@ -1,17 +1,61 @@
 @import "../vars.scss";
+@import "../mixins.scss";
+
+$height_header: 80px;
+
 
 .main_header{
-	background-color: $color_main;
-	padding: 20px;
+	background-color: rgba(white, .6);
+	backdrop-filter: blur(3px);
+	border-bottom: 1px solid $color_grey-ligth;
+	position: sticky;
+	left: 0;
 	&_nav{
-		background-color: red;
-		&__list{
-			margin: 20px;
-			&__item{
+		height: $height_header;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		// background-color: red;
+		.panel_left{
+			&__logo{
 				a{
-					color: white;
+					font: 1.2em GilroyBlack;
+					color: black;
+					text-decoration: none;
 				}
 			}
 		}
+		.panel_right{
+			&__list{
+				display: flex;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				gap: 10px;
+				&__item{
+					a{
+						text-decoration: none;
+						font: 1em GilRoyLight;
+						color: black;
+						@include trs(.15s);
+						border-bottom: 3px solid white;
+						&:hover{
+							border-bottom: 3px solid $color_main;
+						}
+					}
+				}
+			}
+		}
+	}
+	&::after{
+		content: '';
+		background-color: white;
+		width: 110%;
+		left: -10px;
+		height: 45px;
+		display: block;
+		position: absolute;
+		bottom: -30px;
+		transform: rotate(-1deg);
 	}
 }

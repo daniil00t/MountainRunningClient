@@ -1,5 +1,6 @@
 import '../styles/reset.scss'
-// import "../styles/fonts.scss"
+import "../styles/main.scss"
+
 // import App from "next/app";
 import type { AppProps /*, AppContext */ } from 'next/app'
 

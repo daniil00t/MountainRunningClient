@@ -1,0 +1,5 @@
+@import "./vars.scss";
+
+@mixin trs($time: .2s) {
+	transition: all $time ease-in-out;
+}

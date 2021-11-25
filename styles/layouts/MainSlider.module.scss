@@ -1,0 +1,49 @@
+@import "../vars.scss";
+@import "../mixins.scss";
+@import "../fonts.scss";
+
+.main_slider{
+	width: 100%;
+	height: calc(100vh - 60px);
+	background-image: url("/images/slider_im.jpg");
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&_content{
+		width: 60%;
+		height: 40%;
+		display: block;
+		&_article{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 20px;
+			&__header{
+				font: 3em GilRoyBlack;
+				color: white;
+				margin: 0;
+			}
+			&__description{
+				color: white;
+				font: 1.2em GilRoyLight;
+				width: 50%;
+				margin: 0;
+			}
+			&__button{
+				padding: 10px 10px;
+				width: 150px;
+				background-color: $color_main;
+				text-align: center;
+				text-decoration: none;
+				color: white;
+				font: 1em GilRoyBold;
+				border-radius: 25px;
+				@include trs();
+				&:hover{
+					background-color: darken($color_main, 5);
+				}
+			}
+		}
+	}
+}
