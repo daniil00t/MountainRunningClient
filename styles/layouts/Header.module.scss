@@ -5,16 +5,34 @@ $height_header: 80px;
 
 
 .main_header{
-	background-color: rgba(white, .6);
+	background-color: rgba(white, 1);
 	backdrop-filter: blur(3px);
-	border-bottom: 1px solid $color_grey-ligth;
+	
 	position: sticky;
-	left: 0;
+	width: 100%;
+	height: $height_header;
+	z-index: 999;
+	top: 0;
+	display: block;
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 0px;
+		left: 0;
+		height: 30%;
+		width: 100%;
+		transform: SkewY(.7deg);
+		transform-origin: bottom left;
+		background: inherit;
+		border-bottom: 1px solid $color_grey-ligth;
+	 }
 	&_nav{
 		height: $height_header;
+		top: 0;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		width: 100%;
 		// background-color: red;
 		.panel_left{
 			&__logo{
@@ -46,16 +64,5 @@ $height_header: 80px;
 				}
 			}
 		}
-	}
-	&::after{
-		content: '';
-		background-color: white;
-		width: 110%;
-		left: -10px;
-		height: 45px;
-		display: block;
-		position: absolute;
-		bottom: -30px;
-		transform: rotate(-1deg);
 	}
 }

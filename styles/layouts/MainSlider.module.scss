@@ -4,16 +4,40 @@
 
 .main_slider{
 	width: 100%;
-	height: calc(100vh - 60px);
+	height: calc(100vh - 80px);
 	background-image: url("/images/slider_im.jpg");
 	background-size: cover;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	.line_opacity{
+		overflow: hidden !important;
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: relative;
+		.wrapped_line_opacity{
+			width: 150%;
+			height: 70%;
+			min-height: 500px;
+			background-color: rgba(0,0,0,.5);
+			position: absolute;
+			left: -50%;
+			z-index: 1;
+			transform: rotate(50deg);
+		}
+	}
 	&_content{
 		width: 60%;
 		height: 40%;
 		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: auto;
+		z-index: 2;
+		display: flex;
+		align-items: center;
 		&_article{
 			display: flex;
 			flex-direction: column;
@@ -21,28 +45,27 @@
 			gap: 20px;
 			&__header{
 				font: 3em GilRoyBlack;
-				color: white;
+				color: $color_main;
 				margin: 0;
+				position: relative;
+				&::after{
+					content: attr(data-cnt);
+					color: rgb(255, 255, 255);
+					position: absolute;
+					left: 2px;
+					top: 2px;
+				}
 			}
 			&__description{
 				color: white;
-				font: 1.2em GilRoyLight;
+				font: 1.1em GilRoyLight;
 				width: 50%;
 				margin: 0;
 			}
 			&__button{
 				padding: 10px 10px;
 				width: 150px;
-				background-color: $color_main;
-				text-align: center;
-				text-decoration: none;
-				color: white;
-				font: 1em GilRoyBold;
-				border-radius: 25px;
-				@include trs();
-				&:hover{
-					background-color: darken($color_main, 5);
-				}
+				@include button_props($color_main, 25px);
 			}
 		}
 	}

@@ -4,9 +4,13 @@ import classes from "../../styles/layouts/MainSlider.module.scss"
 const MainSlider = () => {
 	return(
 		<section className={classes.main_slider}>
+			
+			<div className={classes.line_opacity}>
+				<div className={classes.wrapped_line_opacity}></div>
+			</div>
 			<div className={classes.main_slider_content}>
 				<article className={classes.main_slider_content_article}>
-					<h2 className={classes.main_slider_content_article__header}>SkiMo Running</h2>
+					<h2 data-cnt="SkiMo Running" className={classes.main_slider_content_article__header}>SkiMo Running</h2>
 					<p className={classes.main_slider_content_article__description}>Cерия индивидуальных трейловых забегов вокруг городских водоемов в твоем городе</p>
 					<Link href="/about"><a className={classes.main_slider_content_article__button}>Подробнее</a></Link>
 				</article>

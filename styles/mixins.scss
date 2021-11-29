@@ -1,4 +1,26 @@
 @import "./vars.scss";
+@import "./fonts.scss";
+
+@mixin button_props($color: $color_main, $brs: $size_border-radius_sm){
+	background-color: $color;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	font: 0.9em GilRoyBold;
+	border-radius: $brs;
+	@include trs();
+	border: 2px solid darken($color, 10);
+	&:hover{
+		background-color: darken($color, 5);
+	}
+	&:active{
+		background-color: lighten($color, 5);
+	}
+}
+
+@mixin bs($size, $blur, $color) {
+	box-shadow: 0 0 $size $blur $color;
+}
 
 @mixin trs($time: .2s) {
 	transition: all $time ease-in-out;
