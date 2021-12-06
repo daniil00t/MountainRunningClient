@@ -1,0 +1,31 @@
+@import "../vars.scss";
+@import "../fonts.scss";
+
+
+.text_stream_container{
+	background-color: $color_main;
+	min-width: 300px;
+	width: 40%;
+	display: block;
+	font: 1em GilroyLight;
+	border-radius: $size_border-radius_sm;
+	min-height: 200px;
+	max-height: 400px;
+	overflow-y: scroll;
+	&__list{
+		list-style-type: none;
+	}
+	&__item{
+		color: white;
+		margin-bottom: 10px;
+		&__author{
+			font-family: GilroyBold;
+			margin-right: 10px;
+		}
+		&__date{
+			padding: 3px 5px;
+			background-color: rgb(26, 161, 48);
+			margin-right: 10px;
+		}
+	}
+}
